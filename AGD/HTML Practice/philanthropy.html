@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Layout</title>
+	<style>
+		.head1 {
+			font-size: 40px;
+			color: #ff61a3;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.head2 {
+			font-size: 17px;
+			margin-left: 10px;
+			margin-bottom: 15px;
+			text-align: center;
+			z-index: 2;
+			color: #000000;
+		}
+		a:link { text-decoration: none; }
+		a:visited { text-decoration: none; }
+		a:hover { text-decoration: none; }
+		a:active { text-decoration: none; }
+		a:hover {opacity: 0.7;}
+		
+		body {
+			min-height: 100vh;
+  			padding: 0;
+			margin: 0 auto;
+			background-position: center;
+			background-size: contain;
+			
+		} 
+
+		.menu {
+			position: sticky;
+			top: 0;
+			background-color: #ffffff;
+			padding: 10px 0px 10px 0px;
+			color: rgb(0, 0, 0);
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		.menu a {
+			float: left;
+			color: rgb(0, 0, 0);
+			text-align: center;
+			padding: 0%;
+			text-decoration: none;
+			font-size: 20px;
+			width: 10%;
+			white-space: normal;
+			
+		}
+		.menu a:hover {
+
+			color: #ff61a3;
+		}
+
+		.menu-log {
+			right: auto;
+			float: right;
+		}
+		#page_wrapper {
+			width: 100%;
+			max-width: 1024px;
+			margin: 0 auto;
+		}
+
+		footer {
+			width: 100%;
+			bottom: 0pt;
+			background-color: #ff61a3;
+			background-position: 0% 0%;
+			color: #fff;
+			position: sticky;
+			left: 0pt;
+			padding: 3px;
+			text-align: center;
+			font-size: 15px;
+			height: auto;
+			font-weight: bold;
+			margin-bottom: 0%;
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #fff;
+		}
+		li {
+			float: center;
+		}
+		li a {
+			display: block;
+			padding: 14px 16px;
+			text-decoration: none;
+			background-color: #ffffff;
+		}
+		h1 {
+			color: rgb(0, 0, 0);
+			font-size: 30px;
+			
+		}
+		h2 {
+			color: rgb(0, 0, 0);
+			text-align: center;
+			font-size: 35px;
+		}
+		h3{
+			text-align: center;
+			font-size: 35px;
+			border-bottom: solid 2px #ff61a3;
+		}
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.text {
+			font-size: 20px;
+			padding-left: 20px;
+			align-items: center;
+			justify-content: center;
+		}
+		.text1 {
+			font-size: 20px;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.column {
+  		float: left;
+  		width: 49.99%;
+		text-align: center;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+		.column1 {
+  		float: left;
+  		width: 24.99%;
+		text-align: center;
+		}
+
+		/* Clear floats after the columns */
+		.row1:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+		.title {
+		color: #ff61a3;
+		font-size: 18px;
+		}
+		.quote{
+			text-align: left;
+			text-indent: 10px;
+		}
+		.dates{
+			font-size: 20px;
+			text-align: center;
+		}
+		.bolded { font-weight: bold; }
+		.collapsible {
+			background-color: #ff8cbc;
+			color: white;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+			}
+
+			.active, .collapsible:hover {
+			background-color: #fcb6d3;
+			}
+
+			.content {
+			padding: 0 18px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+			background-color: #f1f1f1;
+			}
+			.text2 {
+			font-size: 20px;
+			padding-left: 20px;
+			align-items: center;
+			justify-content: center;
+		}
+		#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  align-items: center;
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+			
+	</style>
+</head>
+
+<body>
+
+	<!-- Header Section -->
+	<header>
+		<a href = "home.html">
+			<div class="head1">
+				Alpha Gamma Delta
+			</div>
+			<div class="head2">
+				Zeta Eta Chapter - Rensselaer Polytechnic Institute
+			</div>
+			</a>
+	</header>
+
+	<!-- Menu Navigation Bar -->
+	<div class="menu">
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="aboutus.html">About Us</a></li>
+			<li><a href="officers.html">Officers</a></li>
+			<li><a href="recruitment.html">Recruitment</a></li>
+			<li><a href="philanthropy.html">Philanthropy</a></li>
+			<li><a href="involvement.html">Involvement</a></li>
+			<li><a href="events.html">Events</a></li>
+			<li><a href="alumni.html">Alumni</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+		</ul>
+	</div>
+
+	<!-- Body section -->
+	<h2>Our Philanthropy</h2>
+	<blockquote>
+		Alpha Gamma Delta's philanthropic focus is fighting hunger. 34 million people, including 9 million children in the United States are food insecure. The Zeta Eta Chapter strives to support local communities through our passionate members empowered to fight hunger. We host events such as Alpha Grabba Donut, Phat Sammies, Pretty Pretzels, and Wingin' It, which all help support the Alpha Gamma Delta Foundation, Meals on Wheels, and Feeding America. Like many other Alpha Gamma Delta chapters, we also continue our philanthropic efforts during Hunger Action Month and Week of Service.
+	</blockquote>
+	<blockquote>
+		The Zeta Eta Chapter has achieved Jewel Society, which honors chapters who have raised $2,000 or more annually for the Alpha Gamma Delta Foundation, since 2018. 
+	</blockquote>
+	<img src="agd images/phil1.jpg" style="width:100%">
+	<img src="agd images/phil2.png" style="width:100%">
+	<img src="agd images/phil3.png" style="width:100%">
+	<main class="body_sec">
+				<h3>Philanthropy Events</h3>
+				<div class="text1">
+					<p>Click on the badge to see our banners!</p>
+				</div>
+			<div class="container">
+				<div class="image">
+				  <img src="agd images/donut.png"
+				  width = "250"
+				  height = "250">
+				</div>
+				<div class="text">
+				  <h1>Alpha Grabba Donut</h1>
+				  <blockquote>
+					Sisters come together to the Alpha Gamma Delta house to frost and decorate donuts that are sold to students all over campus to grab a snack before, after, or on their way to classes!
+				  </blockquote>
+				</div>
+			</div >
+				<img src="agd images/sammies.png" width="250" height="250" align="right"/>
+				<div class="text2">
+					<h1>Phat Sammies</h1>
+					<blockquote>
+						A joint philanthropy event with Lambda Chi Alpha (LXA) to create giant (or phat) sandwiches with mozzerella sticks, chicken fingers, mac and cheese, and fries all on a roll. They are handmade, sold and delivered to various students on campus for a late night meal!
+					</blockquote>
+				</div>
+			</div>
+		<div>
+			<div class="container">
+				<div class="image">
+				  <img src="agd images/pretzel.png"
+				  width = "250"
+				  height = "250">
+				</div>
+				<div class="text">
+				  <h1>Pretty Pretzels</h1>
+				  <blockquote>
+					Around Valentine's Day, sisters dip and decorate pretzels in various chocolates and sprinkles for students on campus to send a Valentine or have a sweet treat for themselves!
+				  </blockquote>
+				</div>
+			</div >
+				<img src="agd images/chicken.png" width="250" height="250" align="right"/>
+				<div class="text2">
+					<h1>Wingin' It</h1>
+					<blockquote>
+						A joint philanthropy event with Pi Kappa Theta (Ski Lodge) which involves selling and delivering wings of various flavors and fries until 2:00 AM for students on campus!
+					</blockquote>
+				</div>
+			</div>
+			<div class="container">
+					<img id="myImg" src="agd images/doggo.png" width = 250 height = 250>
+					<div id="myModal" class="modal">
+					<span class="close">&times;</span>
+					<img class="modal-content" src="agd images/chicken.png">
+					<div id="caption"></div>
+				</div>
+				<div class="text">
+				  <h1>Dog Days</h1>
+				  <blockquote>
+					A joint wellness philanthropy event with Chi Phi, encouraging students to meet both of the organizations, pet therapy dogs, and get a breath of fresh air during the week of finals in the Spring!
+				  </blockquote>
+				</div>
+			</div>
+
+	</div>
+<script>
+	// Get the modal
+	var modal = document.getElementById("myModal");
+	
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	var img = document.getElementById("myImg");
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+	img.onclick = function(){
+	  modal.style.display = "block";
+	  captionText.innerHTML = this.alt;
+	}
+	
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() { 
+	  modal.style.display = "none";
+	}
+	</script>
+	</main>
+	
+
+	<!-- Footer Section -->
+	<footer>
+		<p>Alpha Gamma Delta - Zeta Eta</p>
+		<p>19 Sherry Road, Troy, NY, 12180</p>
+	</footer>
+</body>
+</html>

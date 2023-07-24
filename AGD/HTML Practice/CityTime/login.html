@@ -1,0 +1,223 @@
+<html><head>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+<!-- Copyright (C) 2000 Tivoli Systems, Inc. --><!-- Copyright (C) 1999 IBM Corporation --><!-- Copyright (C) 1998 Dascom, Inc. --><!-- All Rights Reserved. -->
+<style>
+	A:visited{
+		color: #0000CC;
+	}
+
+	body {
+	   margin: 0px 0px 0px 0px;
+	}
+
+	#header {
+	   /* Uncomment When Images are avaiable
+	    background:url("images/HEADER_2.jpg");
+	   */
+	    width:100%;
+	    height:65px;
+		border-bottom:1px solid #000000;
+		background-color:#104C7C
+	}
+
+	.contentArea{
+	padding:10px 10px 10px 15px;
+	}
+
+	#form{
+		margin-bottom: 10px;
+	}
+
+	#pageTitle{
+		color:#012C56;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:1.25em;
+		font-weight:700;
+		border-bottom-width: 1px;
+		border-bottom-style: dotted;
+		border-bottom-color: #012C56;
+		padding-bottom: 3px;
+		margin-top: 12px;
+		margin-bottom: 25px;
+	}
+	#welcome{
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:.90em;
+		margin-bottom: 15px;
+	}
+	.formLabel{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.8em;
+		text-align: right;
+		vertical-align: middle;
+		background-color: #013f72;
+		color: #ffffff;
+		width:120px;
+
+	}
+	.formSpace {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.8em;
+		background-color: #DBDBDB;
+		vertical-align: middle;
+
+	}
+
+	#buttons {
+		padding:15px 0px 0px 0px;
+	}
+	#buttons input{
+		margin-right:.5em;
+	}
+	#headerText{
+		margin-top:15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:1.5em;
+		font-weight:700;
+		color:#FFFFFF;
+		margin-left:15px;
+	}
+</style><!--
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+--><title>CityTime Login Page</title></head><body>
+	<div id="header"><img src="login-banner.png" height="65" width="2000"></div>
+	<div class="contentArea">
+		<div id="pageTitle">Sign In </div>
+
+		<div id="welcome">
+		Welcome to CityTime! Please Enter your User Name and Password<br><br>
+			<div style="width: 48% !important; text-align:justify;">
+				<strong>REMINDER:  </strong>Employees eligible to receive overtime compensation under the FLSA and/or collective bargaining agreements are only authorized to work during their regularly scheduled hours.  Any work performed before or after their regularly scheduled hours must be approved in accordance with their agency's policy.
+			</div>
+		</div>
+
+		<b>  <b>
+		<br>
+
+		<!--- DO NOT TRANSLATE OR MODIFY any part of the hidden parameter(s) --->
+
+		<!---
+		  The following block of code provides users with a warning message
+		  if they do not have cookies configured on their browsers.
+		  If this environment does not use cookies to maintain login sessions,
+		  simply remove or comment out the block below.
+		--->
+
+
+		<!--- BEGIN Cookie check block --->
+		<!---
+		DO NOT TRANSLATE anything inside the SCRIPT tag except the quoted
+		string warningString.  i.e. var warningString = "Translate this string";
+		--->
+		<script language="javascript">
+			function password_onkeydown()
+			{
+				if (window.event.keyCode == 13)
+				{
+					submitAction()
+					return false;
+				}
+				else
+					return true;
+			}
+			var iInterval = null;
+			iInterval = window.setInterval("setFocus()",300);
+			var submitted = false;
+
+			function setFocus()
+			{
+				var form = document.forms[0];
+				if(typeof(form.username) != 'undefined' &&
+					form.username.getAttribute("type") != "hidden")
+				{
+					form.username.focus();
+					window.clearInterval(iInterval);
+				}
+			}
+
+			function setCookie(name, value, expires, path, domain, secure)
+			{
+				document.cookie= name + "=" + escape(value) +
+					((expires) ? "; expires=" + expires.toGMTString() : "") +
+					((path) ? "; path=" + path : "") +
+					((domain) ? "; domain=" + domain : "") +
+					((secure) ? "; secure" : "");
+			}
+			function submitAction() {
+				if(submitted) return;
+				var btn = document.getElementById('loginButton');
+				btn && (btn.disabled = true);
+				var form = document.forms[0];
+				var now = new Date();
+				var expires = 1000  * 30 ;
+				now.setTime(now.getTime() + (expires) );
+
+				setCookie("CTHomePage", form.startPage.value, now );
+				form.action="/pkmslogin.form";
+
+				var rechar=/[a-zA-Z]+/
+                                if(  form.username.value.search(rechar) == -1 ) form.username.value = form.username.value.replace(/^0+/,"");
+
+				form.submit();
+				submitted = true;
+			}
+
+		</script>
+		<noscript>
+		<B>WARNING:</B> To maintain your login session, make sure that<BR>
+		your browser is configured to accept Cookies.
+		</noscript>
+		<!--- END Cookie check block --->
+		<br>
+		<form method="post" action="/pkmslogin.form">
+			<div id="form">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr valign="top">
+						<td>
+							<table border="0" cellpadding="5" cellspacing="1" width="100%">
+								<tbody>
+									<tr>
+										<td class="formLabel">User Name</td>
+										<td class="formSpace">
+											<input name="username" tabindex="1">
+										</td>
+									</tr>
+									<tr>
+										<td class="formLabel">Password</td>
+										<td class="formSpace">
+											<input name="password" onkeydown="password_onkeydown()" tabindex="2" type="password">
+										</td>
+									</tr>
+									<tr>
+										<td class="formLabel">Start Page</td>
+										<td class="formSpace">
+											<select name="startPage" tabindex="3">
+												<option value="homePage">Home Page</option>
+												<option value="webClock">Web Clock</option>
+												<option value="currentTimesheet">Current Timesheet</option>
+											</select>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+			<div id="buttons">
+				<input onclick="submitAction()" value="Sign In" name="login" tabindex="4" type="button" id="loginButton">
+				&nbsp;&nbsp;&nbsp;<a href="/ctcare/CTSelfCare/pages/main/task.do?mainLink=reset.password" style="font-family: Arial,Helvetica,sans-serif; font-size: 0.65em;" tabindex="4">Forgot Password</a>
+			</div>
+			<input name="login-form-type" value="pwd" type="hidden">
+		</form>
+
+<p style="font:9pt ariel;width: 48% !important;">
+CityTime is Certified and best used with Google Chrome or Microsoft Edge browsers with a Windows 10 operating system. <br>
+</p>
+<p>
+</p>
+	</b></b></div><b><b>
+	
+</b></b></body></html>

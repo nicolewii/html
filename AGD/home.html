@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Layout</title>
+	<style>
+		.head1 {
+			font-size: 40px;
+			color: #ff61a3;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.head2 {
+			font-size: 17px;
+			margin-left: 10px;
+			margin-bottom: 15px;
+			text-align: center;
+			z-index: 2;
+			color: #000000;
+		}
+		a:link { text-decoration: none; }
+		a:visited { text-decoration: none; }
+		a:hover { text-decoration: none; }
+		a:active { text-decoration: none; }
+		a:hover {opacity: 0.7;}
+		.president{
+			font-size: 20px;
+			margin-left: 10px;
+			margin-bottom: 15px;
+			color: #000000;
+			text-align: center;
+		}
+
+		body {
+			min-height: 100vh;
+  			padding: 0;
+			margin: 0 auto;
+			background-position: center;
+			background-size: contain;
+			
+		}
+
+		.menu {
+			position: sticky;
+			top: 0;
+			background-color: #ffffff;
+			padding: 10px 0px 10px 0px;
+			color: rgb(0, 0, 0);
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		.menu a {
+			float: left;
+			color: rgb(0, 0, 0);
+			text-align: center;
+			padding: 0%;
+			text-decoration: none;
+			font-size: 20px;
+			width: 10%;
+			white-space: normal;
+			
+		}
+		.menu a:hover {
+
+			color: #ff61a3;
+		}
+
+		.menu-log {
+			right: auto;
+			float: right;
+		}
+		#page_wrapper {
+			width: 100%;
+			max-width: 1024px;
+			margin: 0 auto;
+		}
+
+		footer {
+			width: 100%;
+			bottom: 0pt;
+			background-color: #ff61a3;
+			background-position: 0% 0%;
+			color: #fff;
+			position: sticky;
+			left: 0pt;
+			padding: 3px;
+			text-align: center;
+			font-size: 15px;
+			height: auto;
+			font-weight: bold;
+			margin-bottom: auto;
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #fff;
+		}
+		li {
+			float: center;
+		}
+		li a {
+			display: block;
+			padding: 14px 16px;
+			text-decoration: none;
+			background-color: #ffffff;
+		}
+		h1 {
+			color: rgb(0, 0, 0);
+		}
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center
+		}
+		.text {
+			font-size: 20px;
+			padding-left: 20px;
+		}
+		.column {
+  		float: left;
+  		width: 31.90%;
+		text-align: center;
+		padding: 7px;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+		@media screen and (max-width: 600px) {
+		.column {
+			width: 100%;
+		}
+		}
+		
+		
+
+	</style>
+</head>
+
+<body>
+
+	<!-- Header Section -->
+	<header>
+		<a href = "home.html">
+			<div class="head1">
+				Alpha Gamma Delta
+			</div>
+			<div class="head2">
+				Zeta Eta Chapter - Rensselaer Polytechnic Institute
+			</div>
+			</a>
+	</header>
+
+	<!-- Menu Navigation Bar -->
+	<div class="menu">
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="aboutus.html">About Us</a></li>
+			<li><a href="officers.html">Officers</a></li>
+			<li><a href="recruitment.html">Recruitment</a></li>
+			<li><a href="philanthropy.html">Philanthropy</a></li>
+			<li><a href="involvement.html">Involvement</a></li>
+			<li><a href="events.html">Events</a></li>
+			<li><a href="alumni.html">Alumni</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+		</ul>
+	</div>
+
+	<!-- Body section -->
+	<main class="body_sec">
+		<div class="row"> 
+			<div class="column">
+			<img src="agd images/agd1.jpg" style="width:100%">
+			</div>
+			<div class="column">
+			<img src="agd images/agd2.jpg" style="width:100%">
+			</div>
+			<div class="column">
+				<img src="agd images/agd3.jpg" style="width:100%">
+			</div>
+		</div>
+		<div class="row"> 
+			<div class="column">
+			<img src="agd images/agd4.jpg" style="width:100%">
+			</div>
+			<div class="column">
+			<img src="agd images/agd5.jpeg" style="width:100%">
+			</div>
+			<div class="column">
+				<img src="agd images/agd6.jpg" style="width:100%">
+			</div>
+		</div>
+		<div class="row"> 
+			<div class="column">
+			<img src="agd images/agd7.jpg" style="width:100%">
+			</div>
+			<div class="column">
+			<img src="agd images/agd8.jpg" style="width:100%">
+			</div>
+			<div class="column">
+				<img src="agd images/agd9.jpg" style="width:100%">
+			</div>
+		</div>
+			<div class="container">
+				<div class="image">
+				  <img src="agd images/president.jfif"
+				 style="width:95%" >
+				</div>
+				<div class="text">
+				  <h1>Name - Chapter President</h1>
+				  <blockquote>
+					"Quote/letter from president Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. "
+				  </blockquote>
+				</div>
+			  </div>
+			  <div class="row"> 
+				<div class="column">
+				<img src="agd images/agd1.jpg" style="width:100%">
+				</div>
+				<div class="column">
+				<img src="agd images/agd2.jpg" style="width:100%">
+				</div>
+				<div class="column">
+					<img src="agd images/agd3.jpg" style="width:100%">
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="column">
+				<img src="agd images/agd4.jpg" style="width:100%">
+				</div>
+				<div class="column">
+				<img src="agd images/agd5.jpeg" style="width:100%">
+				</div>
+				<div class="column">
+					<img src="agd images/agd6.jpg" style="width:100%">
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="column">
+				<img src="agd images/agd7.jpg" style="width:100%">
+				</div>
+				<div class="column">
+				<img src="agd images/agd8.jpg" style="width:100%">
+				</div>
+				<div class="column">
+					<img src="agd images/agd9.jpg" style="width:100%">
+				</div>
+			</div>
+	</main>
+
+	<!-- Footer Section -->
+	<footer>
+		<p>Alpha Gamma Delta - Zeta Eta</p>
+		<p>19 Sherry Road, Troy, NY, 12180</p>
+	</footer>
+</body>
+</html>

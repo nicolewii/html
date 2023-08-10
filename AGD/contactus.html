@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Layout</title>
+	<style>
+		.head1 {
+			font-size: 40px;
+			color: #ff61a3;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.head2 {
+			font-size: 17px;
+			margin-left: 10px;
+			margin-bottom: 15px;
+			text-align: center;
+			z-index: 2;
+			color: #000000;
+		}
+		a:link { text-decoration: none; }
+		a:visited { text-decoration: none; }
+		a:hover { text-decoration: none; }
+		a:active { text-decoration: none; }
+		a:hover {opacity: 0.7;}
+		
+		body {
+			min-height: 100vh;
+  			padding: 0;
+			margin: 0 auto;
+			background-position: center;
+			background-size: contain;
+			
+		}
+
+		.menu {
+			position: sticky;
+			top: 0;
+			background-color: #ffffff;
+			padding: 10px 0px 10px 0px;
+			color: rgb(0, 0, 0);
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		.menu a {
+			float: left;
+			color: rgb(0, 0, 0);
+			text-align: center;
+			padding: 0%;
+			text-decoration: none;
+			font-size: 20px;
+			width: 10%;
+			white-space: normal;
+			
+		}
+		.menu a:hover {
+
+			color: #ff61a3;
+		}
+
+		.menu-log {
+			right: auto;
+			float: right;
+		}
+		#page_wrapper {
+			width: 100%;
+			max-width: 1024px;
+			margin: 0 auto;
+		}
+
+		footer {
+			width: 100%;
+			bottom: 0pt;
+			background-color: #ff61a3;
+			background-position: 0% 0%;
+			color: #fff;
+			position: sticky;
+			left: 0pt;
+			padding: 3px;
+			text-align: center;
+			font-size: 15px;
+			height: auto;
+			font-weight: bold;
+			margin-bottom: 0%;
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #fff;
+		}
+		
+		li {
+			float: center;
+		}
+		li a {
+			display: block;
+			padding: 14px 16px;
+			text-decoration: none;
+			background-color: #ffffff;
+		}
+		h1 {
+			color: rgb(0, 0, 0);
+			font-size: 30px;
+			
+		}
+		h2 {
+			color: rgb(0, 0, 0);
+			text-align: center;
+			font-size: 35px;
+		}
+		h3{
+			text-align: center;
+			font-size: 35px;
+			border-bottom: solid 2px #ff61a3;
+		}
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.text {
+			font-size: 20px;
+			padding-left: 20px;
+			align-items: center;
+			justify-content: center;
+		}
+		.column {
+  		float: left;
+  		width: 19.99%;
+		text-align: center;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+		.title {
+		color: #ff61a3;
+		font-size: 18px;
+		}
+		.quote{
+			text-align: left;
+			text-indent: 10px;
+		}
+		.bolded { font-weight: bold; }
+			.fab{
+			padding: 20px;
+			font-size: 20px;
+			width: 20px;
+			text-align: center;
+			text-decoration: none;
+			border-radius: 50%;
+			}
+
+			.fab:hover {
+			opacity: 0.7;
+			}
+			.fa-facebook-f {
+			background: #ff8fbe;
+			color: white;
+			}
+			.fa-instagram {
+			background: #ff8fbe;
+			color: white;
+			}
+			.fa-google {
+			background: #ff8fbe;
+			color: white;
+			}
+			.fa-tiktok {
+			background: #ff8fbe;
+			color: white;
+			}
+			.fa-discord {
+			background: #ff8fbe;
+			color: white;
+			}
+		.fb{
+			text-align: center;
+		}
+		.fb .fbtext {
+		visibility: hidden;
+		width: 100px;
+		background-color: #ff8fbe;
+		opacity: 0.7;
+		color: #fff;
+		text-align: center;
+		border-radius: 6px;
+		padding: auto;
+		position: absolute;
+		z-index: 1;
+
+		}
+		.fb:hover .fbtext {
+		visibility: visible;
+		}
+		
+		
+	</style>
+</head>
+
+<body>
+
+	<!-- Header Section -->
+	<header>
+		<a href = "home.html">
+			<div class="head1">
+				Alpha Gamma Delta
+			</div>
+			<div class="head2">
+				Zeta Eta Chapter - Rensselaer Polytechnic Institute
+			</div>
+			</a>
+	</header>
+
+	<!-- Menu Navigation Bar -->
+	<div class="menu">
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="aboutus.html">About Us</a></li>
+			<li><a href="officers.html">Officers</a></li>
+			<li><a href="recruitment.html">Recruitment</a></li>
+			<li><a href="philanthropy.html">Philanthropy</a></li>
+			<li><a href="involvement.html">Involvement</a></li>
+			<li><a href="events.html">Events</a></li>
+			<li><a href="alumni.html">Alumni</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+		</ul>
+	</div>
+
+	<!-- Body section -->
+	<h2>Contact Us</h2>
+	<img src="agd images/us1.jfif" style="width:100%">
+	<blockquote>
+		Want to get to know us better? Follow us on social media! If you have any further questions, you can send an email to our Campus Relations Team!
+	</blockquote>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+	<div class = "row">
+		<div class = "column">
+			<div class = "fb">
+				<span class="fbtext">Zeta Eta Facebook Page</span>
+				<a href="#" class="fab fa-facebook-f"></a>
+			</div>
+		</div>
+		<div class = "column">
+			<div class = "fb">
+				<span class="fbtext">@rpialphagam</span>
+				<a href="#" class="fab fa-instagram"></a>
+			</div>
+		</div>
+		<div class = "column">
+			<div class = "fb">
+				<span class="fbtext">@agd_rpi</span>
+				<a href="#" class='fab fa-tiktok'></a>
+			</div>
+		</div>
+		<div class = "column">
+			<div class = "fb">
+				<span class="fbtext">FSC & Panhel Discord</span>
+				<a href="#" class='fab fa-discord'></a>
+			</div>
+		</div>
+		<div class = "column">
+			<div class = "fb">
+				<span class="fbtext">Email Us</span>
+				<a href="#" class='fab fa-google'></a>
+			</div>
+		</div>
+	</div>
+	
+
+<footer>
+	<p>Alpha Gamma Delta - Zeta Eta</p>
+	<p>19 Sherry Road, Troy, NY, 12180</p>
+</footer>
+</body>
+</html>
